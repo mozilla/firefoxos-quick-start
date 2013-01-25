@@ -15,16 +15,11 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 
 
 ###App Manifests###
-*  Every Firefox OS app requires an `app.manifest` file at the root of the app
-*  An app manifest provides important information about the app, like version, name, description, icon locations, which domain(s) an app may be installed from, and more
-*  A sample app manifest would look like:
+Every Firefox app requires an `app.manifest` file at the root of their app.  The `app.manifest` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
 
-	#!javascript
-	{
-		manifest: "stuff here!"
-	}
+	[code js]
 
-*  Manifests are usually completed after most of the app has been created.
+More specific details can be added as the project gets closer to completion, as is the case with most Firefox OS apps.  A basic manifest will do to get started.
 
 
 
