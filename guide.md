@@ -25,26 +25,26 @@ More specific details can be added as the project gets closer to completion, as 
 ##App Layout & Design##
 Responsive design has become increasingly important as more screen resolutions become standard on different devices.  Even if your app targets only Firefox OS, it's important to remember that Firefox OS can be installed on a [variety of devices](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Firefox_OS_build_prerequisites) which use different screen resolutions.  [CSS media queries](https://developer.mozilla.org/en-US/docs/CSS/Media_queries) provide a means to adapt layout to device:
 
-	/* the following are examples of different CSS media queries */
+	/* The following are examples of different CSS media queries */
 
-	/* basic desktop width sniff */
+	/* Basic desktop/screen width sniff */
 	@media only screen and (min-width : 1224px) {
 		/* styles */
 	}
 
-	/* traditional iphone width */
+	/* Traditional iPhone width */
 	@media
 		only screen and (-webkit-min-device-pixel-ratio : 1.5),
 		only screen and (min-device-pixel-ratio : 1.5) {
 		/* styles */
 	}
 
-	/* device settings at different orientations */
+	/* Device settings at different orientations */
 	@media screen and (orientation:portrait) {
 	    /* portrait styles */
 	}
 	@media screen and (orientation:landscape) {
-	    /* pandscape styles */
+	    /* landscape styles */
 	}
 
 
@@ -56,6 +56,8 @@ Feel free to modify the styles and structure set forth by mortar.
 
 
 ##Web APIs##
+JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.
+
 *  Web APIs are standards-based APIs for accesing and using device features 
 *  Numerous [Web APIs](https://wiki.mozilla.org/WebAPI) are in a state of planned, in development, and completed
 *  Use feature detection before using any Web API
