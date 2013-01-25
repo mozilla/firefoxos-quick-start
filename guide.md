@@ -56,10 +56,8 @@ Feel free to modify the styles and structure set forth by mortar.
 
 
 ##Web APIs##
-JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.
+JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the a recommended 
 
-*  Web APIs are standards-based APIs for accesing and using device features 
-*  Numerous [Web APIs](https://wiki.mozilla.org/WebAPI) are in a state of planned, in development, and completed
 *  Use feature detection before using any Web API
 
 	#!js
