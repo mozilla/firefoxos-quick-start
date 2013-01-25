@@ -17,7 +17,7 @@
 	*  A hosted apps is where the app files are hosted on a remote server (i.e. a website)
 	*  Both require an app manifest
 	*  When submitting to the app marketplace, you either upload the ZIP file or provide the web address of the hosted app
-* For the purposes of getting a simple app started, we'll be using the ZIP file (?)
+* For the purposes of getting a simple app started, we'll be using the hosted method (?)
 
 ###App Manifests###
 *  Every Firefox OS app requires an `app.manifest` file at the root of the app
