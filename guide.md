@@ -57,6 +57,7 @@ Feel free to modify the styles and structure set forth by mortar.
 
 ##Web APIs##
 JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
+
 	// If this device supports the vibrate API...
 	if("vibrate" in navigator) {
 		// ... vibrate for a second
