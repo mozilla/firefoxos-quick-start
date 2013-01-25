@@ -57,6 +57,8 @@ Feel free to modify the styles and structure set forth by mortar.
 
 ##Web APIs##
 JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
+	
+	/* Feature detection example */
 
 	// If this device supports the vibrate API...
 	if("vibrate" in navigator) {
@@ -64,15 +66,14 @@ JavaScript APIs are being created and enhanced as quickly as devices are.  Mozil
 		navigator.vibrate(1000);
 	}
 
-*  In this very basic template we'll change the heading color when the device goes online and offline:
+In this very basic app template we'll change the heading color when the device goes online and offline:
 
 	#!js 
-	// (example based on this:  https://dvcs.w3.org/hg/dap/raw-file/tip/network-api/Overview.html)
+	// [https://dvcs.w3.org/hg/dap/raw-file/tip/network-api/Overview.html]
 
-* (Explanation of code/why)
+(more detail about code above)
 
-
-
+Check the WebAPI page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
 *  (No clue)
