@@ -3,8 +3,7 @@
 ``This is just a basic outline for now``
 
 ###Intro###
-*  It's easy to get started
-*  This guide acts as both a quick tutorial and template to get up and running with your own FFOS app in 5 minutes
+The Firefox OS platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic architecture so that you can create the next great app!
 
 
 
