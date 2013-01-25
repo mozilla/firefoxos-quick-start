@@ -1,4 +1,4 @@
-firefoxos-quick-start
+Firefox OS Quick Start
 =====================
 
-In progress...
+`This is a work in progress...`
