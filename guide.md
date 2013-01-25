@@ -1,22 +1,18 @@
 #Firefox OS Quick Start#
 
-``This is just a basic outline for now``
+``This is just a basic outline for now; full paragraphs are works in progress.``
 
 ###Intro###
-The Firefox OS platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic architecture so that you can create the next great app!
-
-
+The Firefox OS platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic app architecture so that you can create the next great app!
 
 
 ##App Structure##
 
 ###Packaged vs. Hosted Apps###
-*  Firefox OS allows both ``packaged`` and ``hosted`` apps
-	*  Packaged apps are essentially a ZIP file with CSS, JS, and HTML required to run the app
-	*  A hosted apps is where the app files are hosted on a remote server (i.e. a website)
-	*  Both require an app manifest
-	*  When submitting to the app marketplace, you either upload the ZIP file or provide the web address of the hosted app
-* For the purposes of getting a simple app started, we'll be using the hosted method (?)
+There are two types of Firefox OS apps:  `packaged` and `hosted`.  Packed apps are essentially a `zip` file containing all of of an apps assets:  HTML, CSS, JavaScript, images, manifest, etc.  Hosted apps are run from a server at a given domain, just like a standard website.  Both app types require a valid manifest.  When it comes time to list your app on the Firefox Marketplace, you will either upload your app as a zip file or provide the URL to where your hosted app lives.
+
+For the purposes of this guide, you'll be creating a hosted app which will live at your `localhost` address.  Once your app is ready to list on the Firefox Marketplace, you can make the decision to bundle as a packed app or launch as a hosted app.
+
 
 ###App Manifests###
 *  Every Firefox OS app requires an `app.manifest` file at the root of the app
