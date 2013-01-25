@@ -48,8 +48,11 @@ Responsive design has become increasingly important as more screen resolutions b
 	}
 
 
-There are many CSS frameworks available to aid in responsive design; one of those awesome frameworks is Mozilla's [mortar](https://github.com/mozilla/mortar).  This quick start guide fits you with mortar's basic layout template.
+There are many CSS frameworks available to aid in responsive design; one of those awesome frameworks is Mozilla's [mortar](https://github.com/mozilla/mortar).  This quick start guide fits you with mortar's basic layout template:
+	
+	[code INSERT WHEN APP IS DONE]
 
+Feel free to modify the styles and structure set forth by mortar.
 
 
 ##Web APIs##
