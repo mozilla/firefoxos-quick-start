@@ -17,7 +17,7 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 ###App Manifests###
 Every Firefox app requires an [`app.manifest`](https://marketplace-dev.allizom.org/developers/docs/manifests) file at the app root.  The `app.manifest` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
 
-	[code js]
+	[code js; INSERT ME WHEN THE APP IS DONE]
 
 More specific details can be added as the project gets closer to completion, as is the case with most Firefox OS apps.  A basic manifest will do to get started. 
 
@@ -25,7 +25,28 @@ More specific details can be added as the project gets closer to completion, as 
 ##App Layout & Design##
 Responsive design has become increasingly important as more screen resolutions become standard on different devices.  Even if your app targets only Firefox OS, it's important to remember that Firefox OS can be installed on a [variety of devices](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Firefox_OS_build_prerequisites) which use different screen resolutions.  [CSS media queries](https://developer.mozilla.org/en-US/docs/CSS/Media_queries) provide a means to adapt layout to device:
 
-	[code css]
+	/* the following are examples of different CSS media queries */
+
+	/* basic desktop width sniff */
+	@media only screen and (min-width : 1224px) {
+		/* styles */
+	}
+
+	/* traditional iphone width */
+	@media
+		only screen and (-webkit-min-device-pixel-ratio : 1.5),
+		only screen and (min-device-pixel-ratio : 1.5) {
+		/* styles */
+	}
+
+	/* device settings at different orientations */
+	@media screen and (orientation:portrait) {
+	    /* portrait styles */
+	}
+	@media screen and (orientation:landscape) {
+	    /* pandscape styles */
+	}
+
 
 There are many CSS frameworks available to aid in responsive design; one of those awesome frameworks is Mozilla's [mortar](https://github.com/mozilla/mortar).  This quick start guide fits you with mortar's basic layout template.
 
