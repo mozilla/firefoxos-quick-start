@@ -23,3 +23,4 @@ This guide and sample app have been assembled to get you up and running with an 
 *  [Modernizr: Feature Detection Library](http://modernizr.com)
 *  [Mozilla Developer Network](https://developer.mozilla.org)
 *  [WebPlatform](http://www.webplatform.org)
+*  [QUnit Testing Library](http://qunitjs.com/)
