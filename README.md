@@ -10,6 +10,13 @@ This guide and sample app have been assembled to get you up and running with an 
 ###2.  Install volo###
 	npm install -g volo
 
+###3.  Run the app!###
+	cd app
+	volo serve
+
+###4.  Visit in browser###
+	http://localhost:8008
+
 ##Resources##
 
 ###Firefox OS Resources###

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <!-- Use this installation button to install locally without going
+         through the marketpace (see app.js) -->
+    <button id="install-btn">Install</button>    
+
+    <!-- Write your application here -->
+    <div id="indicator" class="offline">
+      Status
+    </div>
+    <script>
+    window.addEventListener("")
+    </script>
+    <style>
+      #indicator {
+        float: right;
+        width: 200px;
+        padding: 20px 0;
+        border: 1px solid #999;
+        text-align: center;
+        font-weight: bold;
+      }
+      #indicator.online {
+        background: lightgreen;
+      }
+      #indicator.offline {
+        background: pink;
+      }
+    </style>
+
+
+
+
+
+    
+    <!-- Using require.js, a module system for javascript, include the
+         js files. This loads "main.js", which in turn can load other
+         files, all handled by require.js:
+         http://requirejs.org/docs/api.html#jsfiles -->
+    <script type="text/javascript"
+            data-main="js/init.js"
+            src="js/lib/require.js"></script>
+  </body>
+</html>
