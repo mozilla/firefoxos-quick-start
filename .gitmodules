@@ -1,3 +1,0 @@
-[submodule "mortar-app-stub"]
-	path = mortar-app-stub
-	url = git://github.com/mozilla/mortar.git

@@ -18,7 +18,7 @@ This guide and sample app have been assembled to get you up and running with an 
 *  [Mortar: Open Web App Templates](https://github.com/mozilla/mortar)
 *  [Creating the AreaTweet App](https://developer.mozilla.org/en-US/docs/Apps/Tutorials/General)
 
-###Front-End Techniques###
+###Client-side Techniques###
 *  [CSS Media Queries](https://developer.mozilla.org/en-US/docs/CSS/Media_queries)
 *  [Modernizr: Feature Detection Library](http://modernizr.com)
 *  [Mozilla Developer Network](https://developer.mozilla.org)
