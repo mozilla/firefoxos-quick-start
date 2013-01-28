@@ -1,6 +1,6 @@
 #Firefox OS Quick Start#
 
-`This is a work in progress...`
+This guide and sample app have been assembled to get you up and running with an open web app in five minutes.
 
 ##Installation##
 
