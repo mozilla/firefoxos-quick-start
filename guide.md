@@ -40,10 +40,10 @@ Responsive design has become increasingly important as more screen resolutions b
 
 	/* Device settings at different orientations */
 	@media screen and (orientation:portrait) {
-	    /* portrait styles */
+	    
 	}
 	@media screen and (orientation:landscape) {
-	    /* landscape styles */
+	    
 	}
 
 
