@@ -17,11 +17,16 @@
     <button id="install-btn">Install</button>    
 
     <!-- Write your application here -->
-    <div id="indicator" class="offline">
-      Status
-    </div>
+    
+    <div id="indicator" class="offline">Status</div>
+
     <script>
-    window.addEventListener("")
+    (function() {
+      var indicator = document.getElementById("indicator");
+      navigator.connection.addEventListener("change", function() {
+        indicator.className = navigator.connection.bandwidth ? "online" : "offline";
+      });
+    })();
     </script>
     <style>
       #indicator {
