@@ -11,4 +11,14 @@ This guide and sample app have been assembled to get you up and running with an 
 	npm install -g volo
 
 ##Resources##
-`Links to Firefox OS simulator, HTML5AppTut, more`
+
+
+###Firefox OS Resources###
+*  [Firefox OS Simulator](https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator/)
+*  [Mortar: Open Web App Templates](https://github.com/mozilla/mortar)
+
+###Front-End Techniques###
+*  [CSS Media Queries](https://developer.mozilla.org/en-US/docs/CSS/Media_queries)
+*  [Modernizr: Feature Detection Library](http://modernizr.com/)
+*  [Mozilla Developer Network](https://developer.mozilla.org/)
+*  [WebPlatform](http://www.webplatform.org/)
