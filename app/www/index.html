@@ -22,40 +22,117 @@
 
     <script>
     (function() {
-      var indicator = document.getElementById("indicator");
-      navigator.connection.addEventListener("change", function() {
-        indicator.className = navigator.connection.bandwidth ? "online" : "offline";
-      });
+      if("connection" in navigator) {
+        var indicator = document.getElementById("indicator");
+        navigator.connection.addEventListener("change", function() {
+          indicator.className = navigator.connection.bandwidth ? "online" : "offline";
+        });
+      }
     })();
     </script>
     <style>
       #indicator {
-        float: right;
         width: 200px;
         padding: 20px 0;
         border: 1px solid #999;
         text-align: center;
         font-weight: bold;
+        margin: 20px;
       }
       #indicator.online {
-        background: lightgreen;
+        background: green;
       }
       #indicator.offline {
-        background: pink;
+        background: red;
       }
     </style>
 
+    <!-- Example: multiple columns when screen is enough, one column when too small -->
+    <div class="container">
+      <div id="items" class="items">
+        <h2>ToDo List</h2>
+        <p>There are no items.</p>
+        <ul id="item-list"></ul>
+      </div>
+      <div class="controls">
+        <form id="item-form">
+          <input id="item" value="" autofocus>
+          <button type="submit" class="add-button">Add Item</button>
+        </form>
+      </div>
+    </div>
 
+    <script>
+      (function() {
+        var form = document.getElementById("item-form"),
+            itemInput = document.getElementById("item"),
+            itemList = document.getElementById("item-list"),
+            itemContainer = document.getElementById("items");
 
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
 
+          if(itemInput.value) {
+            itemList.innerHTML += "<li>" + itemInput.value + "</li>";
+            itemContainer.classList.add("has-items");
+            form.reset();
+          }
+
+          return false;
+        });
+      })();
+    </script>
+
+    <style>
+      .items, .controls {
+        width: 46%;
+        float: left;
+        padding: 1%;
+        border-radius: 10px;
+      }
+      .items {
+        margin-right: 2%;
+        background: #f8f8f8;
+      }
+      .items ul {
+        display: none;
+      }
+      .items.has-items ul {
+        display: block;
+      }
+      .items.has-items p {
+        display: none;
+      }
+      .controls {
+        background: #eee;
+      }
+      .controls input {
+        width: 80%;
+        padding: 5px;
+      }
+      .add-button {
+        background: #0088cc; /* Old browsers */
+        background: -moz-linear-gradient(top,  #0088cc 0%, #0055cc 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0088cc), color-stop(100%,#0055cc)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #0088cc 0%,#0055cc 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #0088cc 0%,#0055cc 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #0088cc 0%,#0055cc 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #0088cc 0%,#0055cc 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0088cc', endColorstr='#0055cc',GradientType=0 ); /* IE6-9 */
+
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        color: white;
+        border: 0;
+      }
+    </style>
 
     
     <!-- Using require.js, a module system for javascript, include the
          js files. This loads "main.js", which in turn can load other
          files, all handled by require.js:
          http://requirejs.org/docs/api.html#jsfiles -->
-    <script type="text/javascript"
-            data-main="js/init.js"
-            src="js/lib/require.js"></script>
+    <script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"></script>
   </body>
 </html>
