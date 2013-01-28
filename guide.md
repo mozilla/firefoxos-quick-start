@@ -2,7 +2,6 @@
 
 ``This is just a basic outline for now; full paragraphs are works in progress.``
 
-###Intro###
 The Firefox OS platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic app architecture so that you can create the next great app!
 
 
@@ -88,5 +87,5 @@ Testing is incredibly important when supporting mobile devices.  There are many 
 
 
 
-##Closing##
-*  Go for it!  Create something awesome!
+##Make Something Great!##
+After you've created your awesome open web app, list it on the [Firefox Marketplace](https://marketplace.firefox.com/); doing so will make your app available to millions of users around the world!
