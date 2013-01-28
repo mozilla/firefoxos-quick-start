@@ -2,8 +2,12 @@
 
 `This is a work in progress...`
 
-##Installation##
-`Instructions to get up and running here`
+###Installation###
+Getting started is a breeze!
 
-##Resource##
+1.  Clone this repository:
+
+	git clone git@github.com:darkwing/firefoxos-quick-start.git
+
+###Resource###
 `Links to Firefox OS simulator, HTML5AppTut, more`
