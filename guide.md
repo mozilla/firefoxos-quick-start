@@ -85,7 +85,5 @@ Testing is incredibly important when supporting mobile devices.  There are many 
 *  Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility.
 
 
-
-
 ##Make Something Great!##
 After you've created your awesome open web app, list it on the [Firefox Marketplace](https://marketplace.firefox.com/); doing so will make your app available to millions of users around the world!

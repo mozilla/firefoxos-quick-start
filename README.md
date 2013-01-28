@@ -14,7 +14,7 @@ This guide and sample app have been assembled to get you up and running with an 
 	cd app
 	volo serve
 
-###4.  Visit in browser###
+###4.  Visit in browser or Firefox OS Simulator###
 	http://localhost:8008
 
 ##Resources##
