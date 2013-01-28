@@ -2,11 +2,9 @@
 
 `This is a work in progress...`
 
-###Installation###
-Getting started is a breeze!
+##Installation##
 
-1.  Clone this repository:
-
+###Clone this repository:###
 	git clone git@github.com:darkwing/firefoxos-quick-start.git
 
 ###Resource###
