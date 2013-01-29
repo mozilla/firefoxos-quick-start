@@ -49,35 +49,35 @@ Responsive design has become increasingly important as more screen resolutions b
 
 There are many JavaScript and CSS frameworks available to aid in responsive design; one of those awesome frameworks is Mozilla's [mortar](https://github.com/mozilla/mortar).  This quick start guide fits you with mortar's basic layout template:
 	
-	&lt;!DOCTYPE html&gt;
-	&lt;html&gt;
-	  &lt;head&gt;
-	    &lt;meta charset="utf-8"&gt;
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <meta charset="utf-8">
 
-	    &lt;title&gt;My App&lt;/title&gt;
-	    &lt;meta name="description" content=""&gt;
-	    &lt;meta name="viewport" content="width=device-width"&gt;
+	    <title>My App</title>
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width">
 
-	    &lt;!-- Place favicon.ico in the root directory --&gt;
+	    <!-- Place favicon.ico in the root directory -->
 
-	    &lt;link rel="stylesheet" href="css/app.css"&gt;
-	  &lt;/head&gt;
-	  &lt;body&gt;
-	    &lt;!-- Use this installation button to install locally without going
-	         through the marketpace (see app.js) --&gt;
-	    &lt;button id="install-btn"&gt;Install&lt;/button&gt;    
+	    <link rel="stylesheet" href="css/app.css">
+	  </head>
+	  <body>
+	    <!-- Use this installation button to install locally without going
+	         through the marketpace (see app.js) -->
+	    <button id="install-btn">Install</button>    
 
-	    &lt;!-- Write your application here --&gt;
+	    <!-- Write your application here -->
 
 	    
 	    
-	    &lt;!-- Using require.js, a module system for javascript, include the
+	    <!-- Using require.js, a module system for javascript, include the
 	         js files. This loads "main.js", which in turn can load other
 	         files, all handled by require.js:
-	         http://requirejs.org/docs/api.html#jsfiles --&gt;
-	    &lt;script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"&gt;&lt;/script&gt;
-	  &lt;/body&gt;
-	&lt;/html&gt;
+	         http://requirejs.org/docs/api.html#jsfiles -->
+	    <script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"></script>
+	  </body>
+	</html>
 
 
 Feel free to modify the styles and structure set forth by mortar.
