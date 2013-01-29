@@ -52,15 +52,24 @@ define(function(require) {
         var form = document.getElementById("item-form"),
             itemInput = document.getElementById("item"),
             itemList = document.getElementById("item-list"),
-            itemContainer = document.getElementById("items");
+            itemContainer = document.getElementById("items"),
+            hasLocalStorage = "localStorage" in window,
+            template = "<li data-value='{item}'>{item} <a href='' class='delete'>Delete</a></li>",
+            items = load();
+
+        // Do initial list items loading
+        items.forEach(function(value) {
+            addItem(value);
+        });
 
         // Adding items
         form.addEventListener("submit", function(e) {
           e.preventDefault();
 
           if(itemInput.value) {
-            itemList.innerHTML += "<li>" + itemInput.value + " <a href='' class='delete'>Delete</a></li>";
-            itemContainer.classList.add("has-items");
+            items.push(itemInput.value);
+            save();
+            addItem(itemInput.value);
             form.reset();
           }
           itemInput.focus();
@@ -73,11 +82,47 @@ define(function(require) {
           e.preventDefault();
 
           if(e.target.className == "delete") {
+            deleteItem(e.target.parentNode.getAttribute("data-value"));
             itemList.removeChild(e.target.parentNode);
-            if(itemList.childNodes.length == 0) {
+            if(items.length == 0) {
               itemContainer.classList.remove("has-items");
             }
+            save();
           }
-        })
+        });
+
+        // Adds an item into the list
+        function addItem(value) {
+            itemList.innerHTML += template.replace(/\{item\}/g, value);
+            itemContainer.classList.add("has-items");
+        }
+
+        // Saves items to localStorage
+        function save() {
+            if(hasLocalStorage) {
+                localStorage.setItem("items", JSON.stringify(items));
+            }
+        }
+
+        // Removes an item from localStorage
+        function deleteItem(value) {
+            var index = items.indexOf(value);
+            if(index != -1) {
+                items.splice(index, 1);
+            }
+        }
+
+        // Loads items from localStorage
+        function load() {
+            var items;
+            if(hasLocalStorage) {
+                try {
+                    items = JSON.parse(localStorage.getItem("items"));
+                }
+                catch(e) {}
+            }
+            return items || [];
+        }
+
       })();
 });
