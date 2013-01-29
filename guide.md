@@ -14,9 +14,41 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 
 
 ###App Manifests###
-Every Firefox app requires an [`app.manifest`](https://marketplace-dev.allizom.org/developers/docs/manifests) file at the app root.  The `app.manifest` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
+Every Firefox app requires an [`manifest.webapp`](https://marketplace-dev.allizom.org/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
 
-	[code js; INSERT ME WHEN THE APP IS DONE]
+	{
+	  "version": "0.1",
+	  "name": "My App",
+	  "description": "My new awesome Open Web App",
+	  "launch_path": "/",
+	  "icons": {
+	    "16": "/img/icons/mortar-16.png",
+	    "48": "/img/icons/mortar-48.png",
+	    "128": "/img/icons/mortar-128.png"
+	  },
+	  "developer": {
+	    "name": "Your Name",
+	    "url": "http://yourawesomeapp.com"
+	  },
+	  "installs_allowed_from": ["*"],
+	  "appcache_path": "/cache.manifest",
+	  "locales": {
+	    "es": {
+	      "description": "Su nueva aplicación impresionante Open Web",
+	      "developer": {
+	        "url": "http://yourawesomeapp.com"
+	      }
+	    },
+	    "it": {
+	      "description": "Il vostro nuovo fantastico Open Web App",
+	      "developer": {
+	        "url": "http://yourawesomeapp.com"
+	      }
+	    }
+	  },
+	  "default_locale": "en"
+	}
+
 
 More specific details can be added as the project gets closer to completion, as is the case with most Firefox OS apps.  A basic manifest will do to get started. 
 
@@ -125,7 +157,7 @@ In the code sample above, once you confirm that the [Battery API](https://develo
 Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
-*  (No clue)
+*  Help?!
 
 
 
