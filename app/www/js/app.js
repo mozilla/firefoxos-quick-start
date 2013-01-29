@@ -62,7 +62,7 @@ define(function(require) {
             addItem(value);
         });
 
-        // Adding items
+        // Add a new item upon form submission
         form.addEventListener("submit", function(e) {
           e.preventDefault();
 
@@ -77,7 +77,7 @@ define(function(require) {
           return false;
         });
 
-        // Deletion
+        // Detect item deletion by event delegation
         itemList.addEventListener("click", function(e) {
           e.preventDefault();
 
