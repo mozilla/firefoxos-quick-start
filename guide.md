@@ -80,7 +80,7 @@ There are many JavaScript and CSS frameworks available to aid in responsive desi
 	</html>
 
 
-Feel free to modify the styles and structure set forth by mortar.
+Feel free to modify the structure set forth by mortar -- the snippet above should get you going though.
 
 
 ##Web APIs##
