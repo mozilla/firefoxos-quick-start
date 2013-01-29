@@ -63,10 +63,34 @@ JavaScript APIs are being created and enhanced as quickly as devices are.  Mozil
 		navigator.vibrate(1000);
 	}
 
-In this very basic app template we'll change the heading color when the device goes online and offline:
+In this very basic app template we'll modify the display style of a `DIV` based on changes in the device's battery state:
 
-	#!js 
-	// [https://dvcs.w3.org/hg/dap/raw-file/tip/network-api/Overview.html]
+	(function() {
+      var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,
+          indicator, indicatorPercentage;
+
+      if(battery) {
+        indicator = document.getElementById("indicator"),
+        indicatorPercentage = document.getElementById("indicator-percentage");
+
+        // Set listeners for changes
+        battery.addEventListener("chargingchange", updateBattery);
+        battery.addEventListener("levelchange", updateBattery);
+
+        // Update immediately
+        updateBattery();
+      }
+
+      function updateBattery() {
+        // Update percentage width and text
+        var level = (battery.level * 100) + "%";
+        indicatorPercentage.style.width = level;
+        indicatorPercentage.innerHTML = level;
+        // Update charging status
+        indicator.className = battery.charging ? "charging" : "";
+      }
+    })();
+	
 
 (more detail about code above)
 

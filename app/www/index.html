@@ -18,15 +18,34 @@
 
     <!-- Write your application here -->
     
-    <!-- online offline indicator -->
-    <div id="indicator" class="offline">Status</div>
+    <!-- Battery indicator -->
+    <div id="indicator">
+      <span id="indicator-percentage"></span>
+    </div>
     <script>
     (function() {
-      if("connection" in navigator) {
-        var indicator = document.getElementById("indicator");
-        navigator.connection.addEventListener("change", function() {
-          indicator.className = navigator.connection.bandwidth ? "online" : "offline";
-        });
+      var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,
+          indicator, indicatorPercentage;
+
+      if(battery) {
+        indicator = document.getElementById("indicator"),
+        indicatorPercentage = document.getElementById("indicator-percentage");
+
+        // Set listeners for changes
+        battery.addEventListener("chargingchange", updateBattery);
+        battery.addEventListener("levelchange", updateBattery);
+
+        // Update immediately
+        updateBattery();
+      }
+
+      function updateBattery() {
+        // Update percentage width and text
+        var level = (battery.level * 100) + "%";
+        indicatorPercentage.style.width = level;
+        indicatorPercentage.innerHTML = level;
+        // Update charging status
+        indicator.className = battery.charging ? "charging" : "";
       }
     })();
     </script>
@@ -41,8 +60,7 @@
       </div>
       <div class="controls">
         <form id="item-form">
-          <input id="item" value="" autofocus>
-          <button type="submit" class="add-button">Add Item</button>
+          <input id="item" value="" autofocus><button type="submit" class="add-button">Add</button>
         </form>
       </div>
     </div>
@@ -63,6 +81,7 @@
             itemContainer.classList.add("has-items");
             form.reset();
           }
+          itemInput.focus();
 
           return false;
         });
@@ -73,6 +92,9 @@
 
           if(e.target.className == "delete") {
             itemList.removeChild(e.target.parentNode);
+            if(itemList.childNodes.length == 0) {
+              itemContainer.classList.remove("has-items");
+            }
           }
         })
       })();
