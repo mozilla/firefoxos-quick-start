@@ -90,11 +90,10 @@ In this very basic app template we'll modify the display style of a `DIV` based 
         indicator.className = battery.charging ? "charging" : "";
       }
     })();
-	
 
-(more detail about code above)
+In the code sample above, once you confirm that the [Battery API](https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery) is supported, you can add event listeners for `chargingchange` and `levelchange` to update the element's display.
 
-Check the WebAPI page frequently to keep up to date with device API statuses!
+Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
 *  (No clue)
