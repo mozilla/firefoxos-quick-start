@@ -20,7 +20,7 @@ Every Firefox app requires an [`manifest.webapp`](https://marketplace-dev.allizo
 	  "version": "0.1",
 	  "name": "My App",
 	  "description": "My new awesome Open Web App",
-	  "launch_path": "/",
+	  "launch_path": "/index.html",
 	  "icons": {
 	    "16": "/img/icons/mortar-16.png",
 	    "48": "/img/icons/mortar-48.png",
