@@ -2,6 +2,12 @@
 
 This guide and sample app have been assembled to get you up and running with an open web app in five minutes!
 
+Included within this Quick Start Guide is:
+
+*  A complete application stub that runs out of the box
+*  Sample JavaScript feature detection and CSS media query (responsive design) code
+*  Mortar-based simple UI framework with ZeptoJS
+
 ##Installation##
 
 ###1.  Clone this repository###

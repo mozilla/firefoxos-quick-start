@@ -10,7 +10,7 @@ define(function(require) {
 
     // Need to verify receipts? This library is included by default.
     // https://github.com/mozilla/receiptverifier
-    require('receiptverifier');
+    // require('receiptverifier');
 
     // Want to install the app locally? This library hooks up the
     // installation button. See <button class="install-btn"> in
