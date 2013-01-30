@@ -119,7 +119,7 @@ Feel free to modify the structure set forth by mortar -- the snippet above shoul
 
 
 ##Web APIs##
-JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
+JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [WebAPI](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [WebAPI](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
 
 	// If this device supports the vibrate API...
 	if('vibrate' in navigator) {
@@ -158,10 +158,10 @@ In this very basic app template we'll modify the display style of a `DIV` based 
 
 In the code sample above, once you confirm that the [Battery API](https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery) is supported, you can add event listeners for `chargingchange` and `levelchange` to update the element's display.
 
-Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
+Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
-There are a number of [Web APIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permissions requests within the `manifest.webapp` file:
+There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
 	
 	// New key in the manifest: "permissions"
 	// Request access to any number of APIs
