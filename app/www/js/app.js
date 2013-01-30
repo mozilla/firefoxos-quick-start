@@ -19,39 +19,19 @@ define(function(require) {
 
     // Write your app here.
 
-    function applyIdleStatus() {
-        if(navigator.addIdleObserver) {
-            try {
-                navigator.addIdleObserver({ time: 4, onidle: function() {
-                    console.log("IDLE!");
-                }, onactive: function() {
-                    console.log("ACTIVE");
-                }});    
-            }
-            catch(e){
-                console.warn("Can't add IdleObserver!", e);
-            }
-        }
-    }
-    
-    
-
     // Create online/offline updater here
     (function() {
         var status = document.getElementById("onlineStatus");
 
-        function updateOnlineStatus(className) {
-            console.log("updateOnlineStatus!  ", className);
-            status.className = className;
+        function updateOnlineStatus() {
+            status.className = connection.bandwidth ? "online" : "";
         }
 
-        updateOnlineStatus(navigator.onLine ? "online" : "");
-        document.body.addEventListener("offline", function () {
-            updateOnlineStatus("");
-        }, false);
-        document.body.addEventListener("online", function () {
-            updateOnlineStatus("online");
-        }, false);
+        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if(connection) {
+            connection.addEventListener("change", updateOnlineStatus);
+        }
+        updateOnlineStatus();
     })();
 
     // Create the battery indicator listeners
@@ -109,7 +89,7 @@ define(function(require) {
 
             //  As an example of using priviledged APIS, we'll try to send a SMS
             //  whenever a new item is added to the list
-            //  (telephone doesn't currently work in Simulator but does work on phones)
+            //  (telephony/sms doesn't currently work in Simulator but does work on phones)
             if(navigator.mozSms != null && navigator.mozSms != undefined) {
                 console.log("Sending an SMS!");
                 var sms = navigator.mozSms.send(phoneNumber, value);
@@ -123,8 +103,6 @@ define(function(require) {
             else {
                 console.log("SMS API not available!");
             }
-
-            applyIdleStatus();
 
             form.reset();
           }

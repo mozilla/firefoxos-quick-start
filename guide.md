@@ -162,9 +162,10 @@ Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up
 ##WebRT APIs##
 There are a number of [Web APIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permissions requests within the `manifest.webapp` file:
 	
-	// New key in the manifest
+	// New key in the manifest; enable SMS and Idle APIs
 	"permissions": {
-		"sms": {}
+		"sms": {},
+		"idle": {}
 	}
 
 Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
