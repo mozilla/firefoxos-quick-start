@@ -21,17 +21,17 @@ define(function(require) {
 
     // Create online/offline updater here
     (function() {
-        var status = document.getElementById("onlineStatus");
-
-        function updateOnlineStatus() {
-            status.className = connection.bandwidth ? "online" : "";
-        }
+        var status = document.getElementById('onlineStatus');
 
         var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
         if(connection) {
-            connection.addEventListener("change", updateOnlineStatus);
+            connection.addEventListener('change', updateOnlineStatus);
         }
         updateOnlineStatus();
+
+        function updateOnlineStatus() {
+            status.className = connection.bandwidth ? 'online' : '';
+        }
     })();
 
     // Create the battery indicator listeners
@@ -40,12 +40,12 @@ define(function(require) {
           indicator, indicatorPercentage;
 
       if(battery) {
-        indicator = document.getElementById("indicator"),
-        indicatorPercentage = document.getElementById("indicator-percentage");
+        indicator = document.getElementById('indicator'),
+        indicatorPercentage = document.getElementById('indicator-percentage');
 
         // Set listeners for changes
-        battery.addEventListener("chargingchange", updateBattery);
-        battery.addEventListener("levelchange", updateBattery);
+        battery.addEventListener('chargingchange', updateBattery);
+        battery.addEventListener('levelchange', updateBattery);
 
         // Update immediately
         updateBattery();
@@ -53,25 +53,25 @@ define(function(require) {
 
       function updateBattery() {
         // Update percentage width and text
-        var level = (battery.level * 100) + "%";
+        var level = (battery.level * 100) + '%';
         indicatorPercentage.style.width = level;
-        indicatorPercentage.innerHTML = "Battery: " + level;
+        indicatorPercentage.innerHTML = 'Battery: ' + level;
         // Update charging status
-        indicator.className = battery.charging ? "charging" : "";
+        indicator.className = battery.charging ? 'charging' : '';
       }
     })();
 
 
     // Create the list functionality
     (function() {
-        var form = document.getElementById("item-form"),
-            itemInput = document.getElementById("item"),
-            itemList = document.getElementById("item-list"),
-            itemContainer = document.getElementById("items"),
-            hasLocalStorage = "localStorage" in window,
-            template = "<li data-value='{item}'>{item} <a href='' class='delete'>Delete</a></li>",
+        var form = document.getElementById('item-form'),
+            itemInput = document.getElementById('item'),
+            itemList = document.getElementById('item-list'),
+            itemContainer = document.getElementById('items'),
+            hasLocalStorage = 'localStorage' in window,
+            template = '<li data-value="{item}">{item} <a href="" class="delete">Delete</a></li>',
             items = load(),
-            phoneNumber = "8675309";
+            phoneNumber = '8675309';
 
         // Do initial list items loading
         items.forEach(function(value) {
@@ -79,7 +79,7 @@ define(function(require) {
         });
 
         // Add a new item upon form submission
-        form.addEventListener("submit", function(e) {
+        form.addEventListener('submit', function(e) {
           e.preventDefault();
 
           if(itemInput.value) {
@@ -91,17 +91,17 @@ define(function(require) {
             //  whenever a new item is added to the list
             //  (telephony/sms doesn't currently work in Simulator but does work on phones)
             if(navigator.mozSms != null && navigator.mozSms != undefined) {
-                console.log("Sending an SMS!");
+                console.log('Sending an SMS!');
                 var sms = navigator.mozSms.send(phoneNumber, value);
                 sms.onsuccess = function(e) {
-                    console.log("SMS sent! ", e);
+                    console.log('SMS sent! ', e);
                 }
                 sms.onerror = function(e) {
-                    console.log("SMS error! ", e);   
+                    console.log('SMS error! ', e);   
                 }
             }
             else {
-                console.log("SMS API not available!");
+                console.log('SMS API not available!');
             }
 
             form.reset();
@@ -111,14 +111,14 @@ define(function(require) {
         });
 
         // Detect item deletion by event delegation
-        itemList.addEventListener("click", function(e) {
+        itemList.addEventListener('click', function(e) {
           e.preventDefault();
 
-          if(e.target.className == "delete") {
-            deleteItem(e.target.parentNode.getAttribute("data-value"));
+          if(e.target.className == 'delete') {
+            deleteItem(e.target.parentNode.getAttribute('data-value'));
             itemList.removeChild(e.target.parentNode);
             if(items.length == 0) {
-              itemContainer.classList.remove("has-items");
+              itemContainer.classList.remove('has-items');
             }
             save();
           }
@@ -127,13 +127,13 @@ define(function(require) {
         // Adds an item into the list
         function addItem(value) {
             itemList.innerHTML += template.replace(/\{item\}/g, value);
-            itemContainer.classList.add("has-items");
+            itemContainer.classList.add('has-items');
         }
 
         // Saves items to localStorage
         function save() {
             if(hasLocalStorage) {
-                localStorage.setItem("items", JSON.stringify(items));
+                localStorage.setItem('items', JSON.stringify(items));
             }
         }
 
@@ -150,7 +150,7 @@ define(function(require) {
             var items;
             if(hasLocalStorage) {
                 try {
-                    items = JSON.parse(localStorage.getItem("items"));
+                    items = JSON.parse(localStorage.getItem('items'));
                 }
                 catch(e) {}
             }

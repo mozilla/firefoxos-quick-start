@@ -32,6 +32,7 @@ Included within this Quick Start Guide is:
 *  [Creating the AreaTweet App](https://developer.mozilla.org/en-US/docs/Apps/Tutorials/General)
 
 ###Client-side Techniques###
+*  [WebAPI Documentation on MDN](https://developer.mozilla.org/en-US/docs/WebAPI)
 *  [CSS Media Queries](https://developer.mozilla.org/en-US/docs/CSS/Media_queries)
 *  [Modernizr: Feature Detection Library](http://modernizr.com)
 *  [Mozilla Developer Network](https://developer.mozilla.org)

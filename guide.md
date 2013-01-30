@@ -122,38 +122,39 @@ Feel free to modify the structure set forth by mortar -- the snippet above shoul
 JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [Web API](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [Web APIs](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
 
 	// If this device supports the vibrate API...
-	if("vibrate" in navigator) {
+	if('vibrate' in navigator) {
 		// ... vibrate for a second
 		navigator.vibrate(1000);
 	}
 
 In this very basic app template we'll modify the display style of a `DIV` based on changes in the device's battery state:
 
+	// Create the battery indicator listeners
 	(function() {
-      var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,
-          indicator, indicatorPercentage;
+	  var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,
+	      indicator, indicatorPercentage;
 
-      if(battery) {
-        indicator = document.getElementById("indicator"),
-        indicatorPercentage = document.getElementById("indicator-percentage");
+	  if(battery) {
+	    indicator = document.getElementById('indicator'),
+	    indicatorPercentage = document.getElementById('indicator-percentage');
 
-        // Set listeners for changes
-        battery.addEventListener("chargingchange", updateBattery);
-        battery.addEventListener("levelchange", updateBattery);
+	    // Set listeners for changes
+	    battery.addEventListener('chargingchange', updateBattery);
+	    battery.addEventListener('levelchange', updateBattery);
 
-        // Update immediately
-        updateBattery();
-      }
+	    // Update immediately
+	    updateBattery();
+	  }
 
-      function updateBattery() {
-        // Update percentage width and text
-        var level = (battery.level * 100) + "%";
-        indicatorPercentage.style.width = level;
-        indicatorPercentage.innerHTML = level;
-        // Update charging status
-        indicator.className = battery.charging ? "charging" : "";
-      }
-    })();
+	  function updateBattery() {
+	    // Update percentage width and text
+	    var level = (battery.level * 100) + '%';
+	    indicatorPercentage.style.width = level;
+	    indicatorPercentage.innerHTML = 'Battery: ' + level;
+	    // Update charging status
+	    indicator.className = battery.charging ? 'charging' : '';
+	  }
+	})();
 
 In the code sample above, once you confirm that the [Battery API](https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery) is supported, you can add event listeners for `chargingchange` and `levelchange` to update the element's display.
 
@@ -162,10 +163,13 @@ Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up
 ##WebRT APIs##
 There are a number of [Web APIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permissions requests within the `manifest.webapp` file:
 	
-	// New key in the manifest; enable SMS and Idle APIs
+	// New key in the manifest: "permissions"
+	// Request access to any number of APIs
+	// Here we request permissions to the WebSMS API, Idle API, and Camera
 	"permissions": {
 		"sms": {},
-		"idle": {}
+		"idle": {},
+		"camera": {}
 	}
 
 Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
