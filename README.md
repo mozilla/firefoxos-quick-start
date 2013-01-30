@@ -14,10 +14,10 @@ Included within this Quick Start Guide is:
 	git clone git@github.com:darkwing/firefoxos-quick-start.git
 
 ###2.  Install volo###
-	npm install -g volo
+	sudo npm install -g volo
 
 ###3.  Run the app!###
-	cd app
+	cd firefoxos-quick-start/app
 	volo serve
 
 ###4.  Visit in browser or Firefox OS Simulator###
