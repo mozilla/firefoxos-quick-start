@@ -17,37 +17,40 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 Every Firefox app requires an [`manifest.webapp`](https://marketplace-dev.allizom.org/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
 
 	{
-	  "version": "0.1",
-	  "name": "My App",
-	  "description": "My new awesome Open Web App",
-	  "launch_path": "/index.html",
-	  "icons": {
-	    "16": "/img/icons/mortar-16.png",
-	    "48": "/img/icons/mortar-48.png",
-	    "128": "/img/icons/mortar-128.png"
-	  },
-	  "developer": {
-	    "name": "Your Name",
-	    "url": "http://yourawesomeapp.com"
-	  },
-	  "installs_allowed_from": ["*"],
-	  "appcache_path": "/cache.manifest",
-	  "locales": {
-	    "es": {
-	      "description": "Su nueva aplicación impresionante Open Web",
-	      "developer": {
-	        "url": "http://yourawesomeapp.com"
-	      }
-	    },
-	    "it": {
-	      "description": "Il vostro nuovo fantastico Open Web App",
-	      "developer": {
-	        "url": "http://yourawesomeapp.com"
-	      }
-	    }
-	  },
-	  "default_locale": "en"
+		"version": "0.1",
+		"name": "Your App",
+		"description": "Your new awesome Open Web App",
+		"launch_path": "/index.html",
+		"icons": {
+			"16": "/img/icons/mortar-16.png",
+			"48": "/img/icons/mortar-48.png",
+			"128": "/img/icons/mortar-128.png"
+		},
+		"developer": {
+			"name": "Your Name",
+			"url": "http://yourawesomeapp.com"
+		},
+		"installs_allowed_from": ["*"],
+		"locales": {
+			"es": {
+				"description": "Su nueva aplicación impresionante Open Web",
+				"developer": {
+					"url": "http://yourawesomeapp.com"
+				}
+			},
+			"it": {
+				"description": "Il vostro nuovo fantastico Open Web App",
+				"developer": {
+					"url": "http://yourawesomeapp.com"
+				}
+			}
+		},
+		"default_locale": "en",
+		"permissions": {
+			"sms": {}
+		}
 	}
+
 
 
 More specific details can be added as the project gets closer to completion, as is the case with most Firefox OS apps.  A basic manifest will do to get started. 
@@ -157,10 +160,14 @@ In the code sample above, once you confirm that the [Battery API](https://develo
 Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
-*  Help?!
+There are a number of [Web APIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permissions requests within the `manifest.webapp` file:
+	
+	// New key in the manifest
+	"permissions": {
+		"sms": {}
+	}
 
-
-
+Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
 
 ##Tools & Testing##
 Testing is incredibly important when supporting mobile devices.  There are many options for testing FirefoxOS apps:

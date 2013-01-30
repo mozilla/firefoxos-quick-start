@@ -53,6 +53,9 @@ body {
 }
 
 /* functional list builder */
+#container {
+  margin-top: 20px;
+}
 .items, .controls {
     width: 46%;
     float: left;

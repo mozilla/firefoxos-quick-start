@@ -92,6 +92,7 @@ define(function(require) {
 
             //  As an example of using priviledged APIS, we'll try to send a SMS
             //  whenever a new item is added to the list
+            //  (telephone doesn't currently work in Simulator but does work on phones)
             if(navigator.mozSms != null && navigator.mozSms != undefined) {
                 console.log("Sending an SMS!");
                 var sms = navigator.mozSms.send(phoneNumber, value);
