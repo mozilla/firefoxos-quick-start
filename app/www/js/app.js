@@ -19,6 +19,23 @@ define(function(require) {
 
     // Write your app here.
 
+    function applyIdleStatus() {
+        if(navigator.addIdleObserver) {
+            try {
+                navigator.addIdleObserver({ time: 4, onidle: function() {
+                    console.log("IDLE!");
+                }, onactive: function() {
+                    console.log("ACTIVE");
+                }});    
+            }
+            catch(e){
+                console.warn("Can't add IdleObserver!", e);
+            }
+        }
+    }
+    
+    
+
     // Create online/offline updater here
     (function() {
         var status = document.getElementById("onlineStatus");
@@ -106,6 +123,8 @@ define(function(require) {
             else {
                 console.log("SMS API not available!");
             }
+
+            applyIdleStatus();
 
             form.reset();
           }
