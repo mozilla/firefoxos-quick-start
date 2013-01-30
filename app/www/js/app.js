@@ -24,15 +24,16 @@ define(function(require) {
         var status = document.getElementById("onlineStatus");
 
         function updateOnlineStatus(className) {
+            console.log("updateOnlineStatus!  ", className);
             status.className = className;
         }
 
         updateOnlineStatus(navigator.onLine ? "online" : "");
         document.body.addEventListener("offline", function () {
-            updateOnlineStatus("")
+            updateOnlineStatus("");
         }, false);
         document.body.addEventListener("online", function () {
-            updateOnlineStatus("online")
+            updateOnlineStatus("online");
         }, false);
     })();
 
@@ -72,7 +73,8 @@ define(function(require) {
             itemContainer = document.getElementById("items"),
             hasLocalStorage = "localStorage" in window,
             template = "<li data-value='{item}'>{item} <a href='' class='delete'>Delete</a></li>",
-            items = load();
+            items = load(),
+            phoneNumber = "8675309";
 
         // Do initial list items loading
         items.forEach(function(value) {
@@ -87,9 +89,25 @@ define(function(require) {
             items.push(itemInput.value);
             save();
             addItem(itemInput.value);
+
+            //  As an example of using priviledged APIS, we'll try to send a SMS
+            //  whenever a new item is added to the list
+            if(navigator.mozSms != null && navigator.mozSms != undefined) {
+                console.log("Sending an SMS!");
+                var sms = navigator.mozSms.send(phoneNumber, value);
+                sms.onsuccess = function(e) {
+                    console.log("SMS sent! ", e);
+                }
+                sms.onerror = function(e) {
+                    console.log("SMS error! ", e);   
+                }
+            }
+            else {
+                console.log("SMS API not available!");
+            }
+
             form.reset();
           }
-          itemInput.focus();
 
           return false;
         });

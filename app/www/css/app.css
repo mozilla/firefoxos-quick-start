@@ -41,8 +41,8 @@ body {
 #onlineStatus {
   width: 16px;
   height: 16px;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   position: absolute;
   background-image: url(../img/offline.png);
   background-position: 0 0;
@@ -130,8 +130,8 @@ body {
  		width: auto;
  		margin: 0;
  		position: absolute;
- 		top: 20px;
- 		left: 20px;
+ 		top: 10px;
+ 		left: 10px;
  		width: 20px;
  		height: 10px;
  		border-width: 2px;
