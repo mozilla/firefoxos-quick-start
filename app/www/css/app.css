@@ -12,7 +12,7 @@ body {
 	background: #1f2226;
 }
 
-/* online / offline indicator */
+/* battery indicator */
 #indicator {
 	border: 2px solid #999;
 	text-align: center;
@@ -34,6 +34,22 @@ body {
 }
 #indicator.charging span {
 	background: green;
+}
+
+
+/* online / offline indicator */
+#onlineStatus {
+  width: 16px;
+  height: 16px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  background-image: url(../img/offline.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+#onlineStatus.online {
+  background-image: url(../img/online.png);
 }
 
 /* functional list builder */
@@ -114,8 +130,8 @@ body {
  		width: auto;
  		margin: 0;
  		position: absolute;
- 		top: 10px;
- 		left: 10px;
+ 		top: 20px;
+ 		left: 20px;
  		width: 20px;
  		height: 10px;
  		border-width: 2px;

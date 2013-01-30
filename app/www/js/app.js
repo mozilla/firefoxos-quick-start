@@ -19,6 +19,23 @@ define(function(require) {
 
     // Write your app here.
 
+    // Create online/offline updater here
+    (function() {
+        var status = document.getElementById("onlineStatus");
+
+        function updateOnlineStatus(className) {
+            status.className = className;
+        }
+
+        updateOnlineStatus(navigator.onLine ? "online" : "");
+        document.body.addEventListener("offline", function () {
+            updateOnlineStatus("")
+        }, false);
+        document.body.addEventListener("online", function () {
+            updateOnlineStatus("online")
+        }, false);
+    })();
+
     // Create the battery indicator listeners
     (function() {
       var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,
@@ -40,7 +57,7 @@ define(function(require) {
         // Update percentage width and text
         var level = (battery.level * 100) + "%";
         indicatorPercentage.style.width = level;
-        indicatorPercentage.innerHTML = level;
+        indicatorPercentage.innerHTML = "Battery: " + level;
         // Update charging status
         indicator.className = battery.charging ? "charging" : "";
       }

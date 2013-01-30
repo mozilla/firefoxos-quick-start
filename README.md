@@ -27,7 +27,7 @@ Included within this Quick Start Guide is:
 
 ###Firefox OS Resources###
 *  [Firefox Marketplace](https://marketplace.firefox.com)
-*  [Firefox OS Simulator](https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator)
+*  [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator)
 *  [Mortar: Open Web App Templates](https://github.com/mozilla/mortar)
 *  [Creating the AreaTweet App](https://developer.mozilla.org/en-US/docs/Apps/Tutorials/General)
 

@@ -165,7 +165,7 @@ Check the [Web APIs](https://wiki.mozilla.org/WebAPI) page frequently to keep up
 ##Tools & Testing##
 Testing is incredibly important when supporting mobile devices.  There are many options for testing FirefoxOS apps:
 
-*  Installing and using the [Firefox OS Simulator](https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator/) is the easiest way to get up and running with your app.  After installed the simulator is accessible via the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.
+*  Installing and using the [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator) is the easiest way to get up and running with your app.  After installed the simulator is accessible via the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.
 *  Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility.
 
 
