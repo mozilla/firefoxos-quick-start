@@ -19,21 +19,6 @@ define(function(require) {
 
     // Write your app here.
 
-    // Create online/offline updater here
-    (function() {
-        var status = document.getElementById('onlineStatus');
-
-        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if(connection) {
-            connection.addEventListener('change', updateOnlineStatus);
-        }
-        updateOnlineStatus();
-
-        function updateOnlineStatus() {
-            status.className = connection.bandwidth ? 'online' : '';
-        }
-    })();
-
     // Create the battery indicator listeners
     (function() {
       var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery,

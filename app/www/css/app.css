@@ -36,22 +36,6 @@ body {
   background: green;
 }
 
-
-/* online / offline indicator */
-#onlineStatus {
-  width: 16px;
-  height: 16px;
-  top: 10px;
-  right: 10px;
-  position: absolute;
-  background-image: url(../img/offline.png);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-}
-#onlineStatus.online {
-  background-image: url(../img/online.png);
-}
-
 /* functional list builder */
 .items, .controls {
     width: 46%;
