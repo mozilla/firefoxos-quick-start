@@ -53,9 +53,6 @@ body {
 }
 
 /* functional list builder */
-#container {
-  margin-top: 20px;
-}
 .items, .controls {
     width: 46%;
     float: left;
@@ -142,6 +139,10 @@ body {
  		text-indent: -9999px;
  		padding: 0;
  	}
+
+  .container {
+    margin-top: 30px;
+  }
 
 	.items, .controls {
 		width: auto;
