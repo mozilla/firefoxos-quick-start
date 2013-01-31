@@ -14,7 +14,9 @@ Included within this Quick Start Guide is:
 	git clone git@github.com:darkwing/firefoxos-quick-start.git
 
 ###2.  Install volo###
-	sudo npm install -g volo
+	npm install -g volo
+
+You may need to use `sudo npm install -g volo` if your user doesn't have admin permissions.
 
 ###3.  Run the app!###
 	cd firefoxos-quick-start/app
