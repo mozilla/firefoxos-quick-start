@@ -1,7 +1,5 @@
 #Firefox OS Quick Start#
 
-``This is just a basic outline for now; full paragraphs are works in progress.``
-
 The [Firefox OS](http://www.mozilla.org/en-US/firefoxos/) platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic app architecture so that you can create the next great app!
 
 
@@ -172,6 +170,8 @@ There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI) which are availa
 
 Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
 
+
+
 ##Tools & Testing##
 Testing is incredibly important when supporting mobile devices.  There are many options for testing FirefoxOS apps:
 
@@ -183,6 +183,16 @@ Unit tests are extremely valuable when testing on different devices and builds. 
 
 ###Installing Firefox OS on a Device###
 Since Firefox OS is an open source platform, code and tools are available to build and install Firefox OS on your own device.  Build and installation instructions can be found on [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform).  Firefox OS preview devices will be available via [Geeksphone](http://www.geeksphone.com/) soon.
+
+
+
+##App Submission and Distribution##
+Once your app is complete, it can be [submitted](https://marketplace.firefox.com/developers/submit/app/manifest) to the [Firefox Marketplace](https://marketplace.firefox.com/).  Your app's manifest will be validated and you may choose which devices your app will support (i.e. Firefox OS, Desktop Firefox, Firefox Mobile, Firefox Tablet).  Once validated you may add additional details about your app (screenshots, descriptions, price, etc.) and officially submit the app for listing within the Marketplace.  Once approved your app is available to the world for purchase and installation.
+
+###More Marketplace &amp; Listing Information### 
+* [Submitting an App to the Firefox OS Marketplace](https://developer.mozilla.org/en-US/docs/Apps/Submitting_an_app)
+* [Marketplace Review Criteria](https://developer.mozilla.org/en-US/docs/Apps/Marketplace_review_criteria)
+* [App Submission Video Walkthrough](http://s.vid.ly/embeded.html?link=8k2n4w&autoplay=false)
 
 ##Make Something Great!##
 After you've created your awesome open web app, list it on the [Firefox Marketplace](https://marketplace.firefox.com/); doing so will make your app available to millions of users around the world!
