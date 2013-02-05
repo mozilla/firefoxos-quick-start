@@ -77,8 +77,8 @@ define(function(require) {
                 navigator.vibrate(200);
             }
 
-            //  As an example of using priviledged APIS, 
-            //  we'll use systemXHR to send the new item value
+            //  As an example of using priviledged WebAPIs, 
+            //  we'll use the systemXHR API to send the new item value
             //  to a (fake) social site.  systemXHR is used more for 
             //  packaged apps since hosted apps can proxy, but 
             //  is presented here for those looking to build
@@ -88,7 +88,7 @@ define(function(require) {
                     mozSystem: true // use systemXHR
                 });
                 xhr.addEventListener('load', function(e) {
-                    // All good!
+                    // All good, posted to social site!
                 });
                 xhr.open('POST', 'http://areatweet.com', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
