@@ -159,7 +159,7 @@ In the code sample above, once you confirm that the [Battery API](https://develo
 Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
 ##WebRT APIs##
-There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI) which are available but require permissions to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
+There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI)s which are available but require permissions to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
 	
 	// New key in the manifest: "permissions"
 	// Request access to any number of APIs
@@ -169,7 +169,6 @@ There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI) which are availa
 	}
 
 Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
-
 
 
 ##Tools & Testing##
@@ -193,6 +192,3 @@ Once your app is complete, it can be [submitted](https://marketplace.firefox.com
 * [Submitting an App to the Firefox OS Marketplace](https://developer.mozilla.org/en-US/docs/Apps/Submitting_an_app)
 * [Marketplace Review Criteria](https://developer.mozilla.org/en-US/docs/Apps/Marketplace_review_criteria)
 * [App Submission Video Walkthrough](http://s.vid.ly/embeded.html?link=8k2n4w&autoplay=false)
-
-##Make Something Great!##
-After you've created your awesome open web app, list it on the [Firefox Marketplace](https://marketplace.firefox.com/); doing so will make your app available to millions of users around the world!
