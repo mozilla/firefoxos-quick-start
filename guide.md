@@ -189,7 +189,7 @@ Since Firefox OS is an open source platform, code and tools are available to bui
 ##App Submission and Distribution##
 Once your app is complete, it can be [submitted](https://marketplace.firefox.com/developers/submit/app/manifest) to the [Firefox Marketplace](https://marketplace.firefox.com/).  Your app's manifest will be validated and you may choose which devices your app will support (i.e. Firefox OS, Desktop Firefox, Firefox Mobile, Firefox Tablet).  Once validated you may add additional details about your app (screenshots, descriptions, price, etc.) and officially submit the app for listing within the Marketplace.  Once approved your app is available to the world for purchase and installation.
 
-###More Marketplace &amp; Listing Information### 
+###More Marketplace &amp; Listing Information###
 * [Submitting an App to the Firefox OS Marketplace](https://developer.mozilla.org/en-US/docs/Apps/Submitting_an_app)
 * [Marketplace Review Criteria](https://developer.mozilla.org/en-US/docs/Apps/Marketplace_review_criteria)
 * [App Submission Video Walkthrough](http://s.vid.ly/embeded.html?link=8k2n4w&autoplay=false)
