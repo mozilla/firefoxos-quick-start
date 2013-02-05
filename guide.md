@@ -47,7 +47,7 @@ Every Firefox app requires an [`manifest.webapp`](https://marketplace-dev.allizo
 		},
 		"default_locale": "en",
 		"permissions": {
-			"sms": {}
+			"systemXHR": {}
 		}
 	}
 
@@ -165,11 +165,9 @@ There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI) which are availa
 	
 	// New key in the manifest: "permissions"
 	// Request access to any number of APIs
-	// Here we request permissions to the WebSMS API, Idle API, and Camera
+	// Here we request permissions to the systemXHR API
 	"permissions": {
-		"sms": {},
-		"idle": {},
-		"camera": {}
+		"systemXHR": {}
 	}
 
 Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
@@ -177,9 +175,14 @@ Once you've installed your app on Firefox OS Simulator, open the `Settings` app,
 ##Tools & Testing##
 Testing is incredibly important when supporting mobile devices.  There are many options for testing FirefoxOS apps:
 
-*  Installing and using the [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator) is the easiest way to get up and running with your app.  After installed the simulator is accessible via the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.
-*  Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility.
+###Firefox OS Simulator###
+Installing and using the [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator) is the easiest way to get up and running with your app.  After installed the simulator is accessible via the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.  The simulator launches with a JavaScript console so that you may debug your application from within the simulator!
 
+###Unit Testing###
+Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility, but you can use any set of testing tools you'd like.  
+
+###Installing Firefox OS on a Device###
+Since Firefox OS is an open source platform, code and tools are available to build and install Firefox OS on your own device.  Build and installation instructions can be found on [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform).  Firefox OS preview devices will be available via [Geeksphone](http://www.geeksphone.com/) soon.
 
 ##Make Something Great!##
 After you've created your awesome open web app, list it on the [Firefox Marketplace](https://marketplace.firefox.com/); doing so will make your app available to millions of users around the world!

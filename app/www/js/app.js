@@ -72,22 +72,33 @@ define(function(require) {
             save();
             addItem(itemInput.value);
 
-            //  As an example of using priviledged APIS, we'll try to send a SMS
-            //  whenever a new item is added to the list
-            //  (telephony/sms doesn't currently work in Simulator but does work on phones)
-            if(navigator.mozSms != null && navigator.mozSms != undefined) {
-                console.log('Sending an SMS!');
-                var sms = navigator.mozSms.send(phoneNumber, value);
-                sms.onsuccess = function(e) {
-                    console.log('SMS sent! ', e);
-                }
-                sms.onerror = function(e) {
-                    console.log('SMS error! ', e);   
-                }
+            // Use the vibrate API to acknowledge the item was added
+            if('vibrate' in navigator) {
+                navigator.vibrate(200);
             }
-            else {
-                console.log('SMS API not available!');
+
+            //  As an example of using priviledged APIS, 
+            //  we'll use systemXHR to send the new item value
+            //  to a (fake) social site.  systemXHR is used more for 
+            //  packaged apps since hosted apps can proxy, but 
+            //  is presented here for those looking to build
+            //  a hosted app instead.
+            try {
+                var xhr = new XMLHttpRequest({
+                    mozSystem: true // use systemXHR
+                });
+                xhr.addEventListener('load', function(e) {
+                    // All good!
+                });
+                xhr.open('POST', 'http://areatweet.com', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send('item=' + itemInput.value);
             }
+            catch(e){
+                console.log('XHR Error!  systemXHR not implemented or no permissions');
+            }
+            
+            
 
             form.reset();
           }
