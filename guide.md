@@ -115,7 +115,7 @@ One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mort
 	</html>
 
 
-Feel free to modify the structure set forth by mortar -- the snippet above should get you going.
+Feel free to modify the structure set forth by mortar -- the snippet above should get you going.  Note that all JavaScript code must be in separate `.js` files;  no inline, scripting is allowed.
 
 
 ##Web APIs##
@@ -159,6 +159,7 @@ In this very basic app template we'll modify the display style of a `DIV` based 
 In the code sample above, once you confirm that the [Battery API](https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery) is supported, you can add event listeners for `chargingchange` and `levelchange` to update the element's display.
 
 Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
+
 
 ##WebRT APIs (Permissions-based APIs)##
 There are a number of [WebAPIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions for that specific feature to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
