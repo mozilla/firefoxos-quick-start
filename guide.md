@@ -12,7 +12,7 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 
 
 ###App Manifests###
-Every Firefox app requires an [`manifest.webapp`](https://marketplace-dev.allizom.org/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more.  The simple manifest included within the app template looks like:
+Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.com/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more (Only the name and description are required).  The simple manifest included within the app template looks like:
 
 	{
 		"version": "0.1",
@@ -80,7 +80,9 @@ Responsive design has become increasingly important as more screen resolutions b
 	}
 
 
-There are many JavaScript and CSS frameworks available to aid in responsive design; one of those awesome frameworks is Mozilla's [mortar](https://github.com/mozilla/mortar).  This quick start guide fits you with mortar's basic layout template:
+There are many JavaScript and CSS frameworks available to aid in responsive design and mobile app development ([Bootstrap](http://twitter.github.com/bootstrap/, [jQuery Mobile](http://jquerymobile.com), etc.);  choose the framework(s) that best fit your app and development style.  
+
+One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mortar doesn't provide responsive design help, but does provide app templates a few JavaScript utilities to aid in Firefox OS mobile development, like [zepto.js](http://zeptojs.com/) (a light alternative to jQuery) and a utility to install your app on the Firefox OS Simulator.  This quick start guide fits you with mortar's most basic layout template:
 	
 	<!DOCTYPE html>
 	<html>
@@ -113,7 +115,7 @@ There are many JavaScript and CSS frameworks available to aid in responsive desi
 	</html>
 
 
-Feel free to modify the structure set forth by mortar -- the snippet above should get you going though.
+Feel free to modify the structure set forth by mortar -- the snippet above should get you going.
 
 
 ##Web APIs##
@@ -158,8 +160,8 @@ In the code sample above, once you confirm that the [Battery API](https://develo
 
 Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up to date with device API statuses!
 
-##WebRT APIs##
-There are a number of [WebAPI](https://wiki.mozilla.org/WebAPI)s which are available but require permissions to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
+##WebRT APIs (Permissions-based APIs)##
+There are a number of [WebAPIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions for that specific feature to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
 	
 	// New key in the manifest: "permissions"
 	// Request access to any number of APIs
