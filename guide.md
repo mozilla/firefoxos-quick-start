@@ -2,6 +2,8 @@
 
 The [Firefox OS](http://www.mozilla.org/en-US/firefoxos/) platform gives web developers exactly what they've wanted for years:  a mobile environment dedicated to apps created with just HTML, CSS, and JavaScript.  This guide aims to get you up and running with an environment and basic app architecture so that you can create the next great app!
 
+*To follow along with this guide, you can [download the quick start app](https://github.com/mozilla/firefoxos-quick-start/archive/master.zip).*
+
 
 ##App Structure##
 
