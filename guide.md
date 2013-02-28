@@ -8,9 +8,9 @@ The [Firefox OS](http://www.mozilla.org/en-US/firefoxos/) platform gives web dev
 ##App Structure##
 
 ###Packaged vs. Hosted Apps###
-There are two types of Firefox OS apps:  `packaged` and `hosted`.  Packed apps are essentially a `zip` file containing all of of an apps assets:  HTML, CSS, JavaScript, images, manifest, etc.  Hosted apps are run from a server at a given domain, just like a standard website.  Both app types require a valid manifest.  When it comes time to list your app on the Firefox Marketplace, you will either upload your app as a zip file or provide the URL to where your hosted app lives.
+There are two types of Firefox OS apps:  `packaged` and `hosted`.  Packaged apps are essentially a `zip` file containing all of of an apps assets:  HTML, CSS, JavaScript, images, manifest, etc.  Hosted apps are run from a server at a given domain, just like a standard website.  Both app types require a valid manifest.  When it comes time to list your app on the Firefox Marketplace, you will either upload your app as a zip file or provide the URL to where your hosted app lives.
 
-For the purposes of this guide, you'll be creating a hosted app which will live at your `localhost` address.  Once your app is ready to list on the Firefox Marketplace, you can make the decision to bundle as a packed app or launch as a hosted app.
+For the purposes of this guide, you'll be creating a hosted app which will live at your `localhost` address.  Once your app is ready to list on the Firefox Marketplace, you can make the decision to bundle as a packaged app or launch as a hosted app.
 
 
 ###App Manifests###
@@ -47,7 +47,7 @@ Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.co
 		},
 		"default_locale": "en",
 		"permissions": {
-			"systemXHR": {}
+			"systemXHR": { "type": "privileged" }
 		}
 	}
 
@@ -166,9 +166,6 @@ Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up t
 ##WebRT APIs (Permissions-based APIs)##
 There are a number of [WebAPIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions for that specific feature to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
 	
-	// New key in the manifest: "permissions"
-	// Request access to any number of APIs
-	// Here we request permissions to the systemXHR API
 	"permissions": {
 		"systemXHR": {}
 	}
