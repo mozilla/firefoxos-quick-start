@@ -7,9 +7,15 @@
 
 /* Your styles here */
 
+html {
+  background:
+    url(../img/pattern.png) repeat left top,
+    url(../img/gradient.png) no-repeat left top / 100% 100%;
+    min-height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #1f2226;
 }
 
 /* battery indicator */
@@ -36,13 +42,23 @@ body {
   background: green;
 }
 
+.container:before, .container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.container:after {
+    clear: both;
+}
+
 /* functional list builder */
 .items, .controls {
     width: 46%;
     float: left;
     padding: 1%;
     border-radius: 10px;
-    background: #32353b;
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
   }
   .items {
@@ -82,20 +98,19 @@ body {
     display: inline-block;
     margin-right: 1%;
     padding: 2%;
+    font-size: 1em;
   }
   .add-button {
-    background: #8eaf53;
-    background: -webkit-gradient(linear,left top,left bottom,from(#8eaf53),to(#799e3c));
-  background: -moz-linear-gradient(top,#8eaf53,#799e3c);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#8eaf53', endColorstr='#799e3c');
+    background: url(../img/recommend.png) 0 bottom repeat-x #00caf2;
     text-align: center;
     display: inline-block;
-    padding: 3% 1%;
+    padding: 2%;
     color: white;
     border: 0;
     cursor: pointer;
     width: 15%;
     display: inline-block;
+    font-size: 1em;
   }
 
   .delete {
@@ -136,7 +151,7 @@ body {
   }
 
   .items {
-    margin: 20px 0;
+    margin: 0 0 20px 0;
   }
 
   .controls input, .controls button {
@@ -147,5 +162,4 @@ body {
     -moz-box-sizing: border-box;
     font-size: 1.3em;
   }
-
  }
