@@ -32,6 +32,7 @@ You may need to use `sudo npm install -g volo` if your user doesn't have admin p
 *  [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator)
 *  [Mortar: Open Web App Templates](https://github.com/mozilla/mortar)
 *  [Creating the AreaTweet App](https://developer.mozilla.org/en-US/docs/Apps/Tutorials/General)
+*  [Firefox OS Building Blocks to the Rescue - Style Elements Like Firefox OS](https://hacks.mozilla.org/2013/02/firefox-os-building-blocks-to-the-rescue/)
 
 ###Client-side Techniques###
 *  [WebAPI Documentation on MDN](https://developer.mozilla.org/en-US/docs/WebAPI)
