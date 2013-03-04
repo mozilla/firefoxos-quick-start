@@ -87,7 +87,7 @@ There are many JavaScript and CSS frameworks available to aid in responsive desi
 One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mortar doesn't provide responsive design help, but does provide app templates a few JavaScript utilities to aid in Firefox OS mobile development, like [zepto.js](http://zeptojs.com/) (a light alternative to jQuery) and a utility to install your app on the Firefox OS Simulator.  This quick start guide fits you with mortar's most basic layout template:
 	
 	<!DOCTYPE html>
-	<html>
+	<html manifest="offline.appcache">
 	  <head>
 	    <meta charset="utf-8">
 
@@ -109,7 +109,7 @@ One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mort
 	    
 	    
 	    <!-- Using require.js, a module system for javascript, include the
-	         js files. This loads "main.js", which in turn can load other
+	         js files. This loads "init.js", which in turn can load other
 	         files, all handled by require.js:
 	         http://requirejs.org/docs/api.html#jsfiles -->
 	    <script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"></script>
