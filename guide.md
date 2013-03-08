@@ -8,13 +8,13 @@ The [Firefox OS](http://www.mozilla.org/en-US/firefoxos/) platform gives web dev
 ##App Structure##
 
 ###Packaged vs. Hosted Apps###
-There are two types of Firefox OS apps:  `packaged` and `hosted`.  Packaged apps are essentially a `zip` file containing all of of an apps assets:  HTML, CSS, JavaScript, images, manifest, etc.  Hosted apps are run from a server at a given domain, just like a standard website.  Both app types require a valid manifest.  When it comes time to list your app on the Firefox Marketplace, you will either upload your app as a zip file or provide the URL to where your hosted app lives.
+There are two types of Firefox OS apps:  `packaged` and `hosted`.  Packaged apps are essentially a zip file containing all of of an app's assets:  HTML, CSS, JavaScript, images, manifest, etc.  Hosted apps are run from a server at a given domain, just like a standard website.  Both app types require a valid manifest.  When it comes time to list your app on the Firefox Marketplace, you will either upload your app as a zip file or provide the URL to where your hosted app lives.
 
-For the purposes of this guide, you'll be creating a hosted app which will live at your `localhost` address.  Once your app is ready to list on the Firefox Marketplace, you can make the decision to bundle as a packaged app or launch as a hosted app.
+For the purposes of this guide, you'll be creating a hosted app which will live at your `localhost` address.  Once your app is ready to list on the Firefox Marketplace, you can make the decision to bundle it as a packaged app or launch it as a hosted app.
 
 
 ###App Manifests###
-Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.com/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more (Only the name and description are required).  The simple manifest included within the app template looks like:
+Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.com/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more (only the name and description are required).  The simple manifest included within the app template looks like:
 
 	{
 		"version": "0.1",
