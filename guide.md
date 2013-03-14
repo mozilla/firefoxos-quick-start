@@ -14,7 +14,7 @@ For the purposes of this guide, you'll be creating a hosted app which will live 
 
 
 ###App Manifests###
-Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.com/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more (only the name and description are required).  The simple manifest included within the app template looks like:
+Every Firefox app requires a [`manifest.webapp`](https://marketplace.firefox.com/developers/docs/manifests) file at the app root.  The `manifest.webapp` file provides important information about the app, like version, name, description, icon location, locale strings, domains the app can be installed from, and much more (only the name and description are required).  The simple manifest included in the app template looks like this:
 
 	{
 		"version": "0.1",
@@ -46,8 +46,9 @@ Every Firefox app requires an [`manifest.webapp`](https://marketplace.firefox.co
 			}
 		},
 		"default_locale": "en",
+		"type": "privileged",
 		"permissions": {
-			"systemXHR": { "type": "privileged" }
+			"systemXHR": { "description": "Required for certain web communications" }
 		}
 	}
 
@@ -82,9 +83,9 @@ Responsive design has become increasingly important as more screen resolutions b
 	}
 
 
-There are many JavaScript and CSS frameworks available to aid in responsive design and mobile app development ([Bootstrap](http://twitter.github.com/bootstrap/, [jQuery Mobile](http://jquerymobile.com), etc.);  choose the framework(s) that best fit your app and development style.  
+There are many JavaScript and CSS frameworks available to aid in responsive design and mobile app development ([Twitter Bootstrap](http://twitter.github.com/bootstrap/, [jQuery Mobile](http://jquerymobile.com), etc.);  choose the framework(s) that best fit your app and development style.  
 
-One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mortar doesn't provide responsive design help, but does provide app templates a few JavaScript utilities to aid in Firefox OS mobile development, like [zepto.js](http://zeptojs.com/) (a light alternative to jQuery) and a utility to install your app on the Firefox OS Simulator.  This quick start guide fits you with mortar's most basic layout template:
+One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mortar doesn't provide responsive design help, but it does provide app templates with a few JavaScript utilities to aid in Firefox OS mobile development, like [zepto.js](http://zeptojs.com/) (a light alternative to jQuery) and a utility to install your app on the Firefox OS Simulator.  This quick start guide uses mortar's most basic layout template:
 	
 	<!DOCTYPE html>
 	<html manifest="offline.appcache">
@@ -108,7 +109,7 @@ One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mort
 
 	    
 	    
-	    <!-- Using require.js, a module system for javascript, include the
+	    <!-- Using require.js, a module system for JavaScript, include the
 	         js files. This loads "init.js", which in turn can load other
 	         files, all handled by require.js:
 	         http://requirejs.org/docs/api.html#jsfiles -->
@@ -117,11 +118,11 @@ One nice utility is Mozilla's [mortar](https://github.com/mozilla/mortar).  Mort
 	</html>
 
 
-Feel free to modify the structure set forth by mortar -- the snippet above should get you going.  Note that all JavaScript code must be in separate `.js` files;  no inline, scripting is allowed.
+Feel free to modify the structure set out by mortar -- the snippet above should get you going.  Note that all JavaScript code must be in separate `.js` files;  no inline scripting is allowed.
 
 
 ##Web APIs##
-JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [WebAPI](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [WebAPI](https://wiki.mozilla.org/WebAPI) page.  Of course JavaScript feature detection is still the best practice:
+JavaScript APIs are being created and enhanced as quickly as devices are.  Mozilla's [WebAPI](https://wiki.mozilla.org/WebAPI) effort brings dozens of standard mobile features to JavaScript APIs.  A list of device support and status is available on the [App permissions](https://developer.mozilla.org/en-US/docs/Apps/App_permissions) page.  Of course JavaScript feature detection is still the best practice for checking if a WebAPI is available:
 
 	// If this device supports the vibrate API...
 	if('vibrate' in navigator) {
@@ -164,31 +165,35 @@ Check the [WebAPI](https://wiki.mozilla.org/WebAPI) page frequently to keep up t
 
 
 ##WebRT APIs (Permissions-based APIs)##
-There are a number of [WebAPIs](https://wiki.mozilla.org/WebAPI) which are available but require permissions for that specific feature to be enabled.  Apps may register permission requests within the `manifest.webapp` file:
+There are a number of [WebAPIs](https://developer.mozilla.org/en-US/docs/Apps/App_permissions) available, but they require permissions for that specific feature to be enabled.  Apps must register permission requests in the `manifest.webapp` file:
 	
 	"permissions": {
-		"systemXHR": {}
+		"systemXHR": { "description": "Required for AJAX calls in app"}
 	}
 
-Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all Web APIs have been implemented within the Firefox OS Simulator.
+Because the `systemXHR` permission requires that the app be a privileged app, you must also add this to `manifest.webapp`:
+
+	"type": "privileged"
+
+Once you've installed your app on Firefox OS Simulator, open the `Settings` app, select `App Permissions`, select your app, and enable permissions as desired.  It's important to note that not all WebAPIs have been implemented yet in the Firefox OS Simulator.
 
 
 ##Tools & Testing##
 Testing is incredibly important when supporting mobile devices.  There are many options for testing FirefoxOS apps:
 
 ###Firefox OS Simulator###
-Installing and using the [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator) is the easiest way to get up and running with your app.  After installed the simulator is accessible via the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.  The simulator launches with a JavaScript console so that you may debug your application from within the simulator!
+Installing and using the [Firefox OS Simulator](https://marketplace.firefox.com/developers/docs/firefox_os_simulator) is the easiest way to get up and running with your app.  After you install the simulator, you can start it from the `Tools` -> `Web Developer` -> `Firefox OS Simulator` menu.  The simulator launches with a JavaScript console so you can debug your app from within the simulator!
 
 ###Unit Testing###
-Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility, but you can use any set of testing tools you'd like.  
+Unit tests are extremely valuable when testing on different devices and builds.  jQuery's  [QUnit](http://qunitjs.com/) is a popular client-side testing utility, but you can use any set of testing tools you like.  
 
 ###Installing Firefox OS on a Device###
-Since Firefox OS is an open source platform, code and tools are available to build and install Firefox OS on your own device.  Build and installation instructions can be found on [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform).  Firefox OS preview devices will be available via [Geeksphone](http://www.geeksphone.com/) soon.
+Since Firefox OS is an open source platform, code and tools are available to build and install Firefox OS on your own device.  Build and installation instructions can be found on [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform).  Firefox OS preview devices will be available through [Geeksphone](http://www.geeksphone.com/) soon.
 
 
 
 ##App Submission and Distribution##
-Once your app is complete, it can be [submitted](https://marketplace.firefox.com/developers/submit/app/manifest) to the [Firefox Marketplace](https://marketplace.firefox.com/).  Your app's manifest will be validated and you may choose which devices your app will support (i.e. Firefox OS, Desktop Firefox, Firefox Mobile, Firefox Tablet).  Once validated you may add additional details about your app (screenshots, descriptions, price, etc.) and officially submit the app for listing within the Marketplace.  Once approved your app is available to the world for purchase and installation.
+Once your app is complete, you can [submit it](https://marketplace.firefox.com/developers/submit/app/manifest) to the [Firefox Marketplace](https://marketplace.firefox.com/).  Your app's manifest will be validated and you can choose which devices your app will support (i.e. Firefox OS, Desktop Firefox, Firefox Mobile, Firefox Tablet).  Once validated you can add additional details about your app (screenshots, descriptions, price, etc.) and officially submit the app for listing in the Marketplace.  Once approved, your app is available to the world for purchase and installation!
 
 ###More Marketplace &amp; Listing Information###
 * [Submitting an App to the Firefox OS Marketplace](https://developer.mozilla.org/en-US/docs/Apps/Submitting_an_app)
