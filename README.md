@@ -11,7 +11,7 @@ Included within this Quick Start Guide is:
 ##Installation##
 
 ###1.  Clone this repository###
-	git clone git@github.com:darkwing/firefoxos-quick-start.git
+	git clone git@github.com:mozilla/firefoxos-quick-start.git
 
 ###2.  Install volo###
 	npm install -g volo
