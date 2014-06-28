@@ -38,7 +38,7 @@ define(function(require) {
 
       function updateBattery() {
         // Update percentage width and text
-        var level = (battery.level * 100) + '%';
+        var level = Math.round(battery.level * 100) + '%';
         indicatorPercentage.style.width = level;
         indicatorPercentage.innerHTML = 'Battery: ' + level;
         // Update charging status
